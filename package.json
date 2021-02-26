@@ -1,0 +1,10 @@
+{
+  "name": "r-vue-app",
+  "version": "1.0.0",
+  "description": "demo app using R plumber and Vue",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
