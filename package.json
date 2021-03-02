@@ -4,6 +4,11 @@
   "description": "demo app using R plumber and Vue",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "Rscript -e \"source('server.R')\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
   "devDependencies": {
     "concurrently": "^6.0.0"
   }
