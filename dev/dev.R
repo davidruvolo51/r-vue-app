@@ -9,6 +9,8 @@
 #' COMMENTS: NA
 #'////////////////////////////////////////////////////////////////////////////
 
-# renv
+# renv -- manually add packages via `renv::install`
 renv::init(bare = TRUE)
-renv::install("")
+renv::install("palmerpenguins")
+renv::install("plumber")
+renv::install("jsonlite")
