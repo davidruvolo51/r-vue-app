@@ -20,7 +20,7 @@ node -v
 npm -v
 ```
 
-### 2. Clone the `r-react-demo` repository
+### 2. Clone the `r-vue-app` repository
 
 ```shell
 git clone https://github.com/davidruvolo51/r-vue-app
@@ -54,8 +54,8 @@ npm install
 
 ### 4. Start the development servers
 
-When everything is install, navigate back to the main directory and start the development server. This will start the client at port `localhost:8000` and the API at `localhost:5000`.
+When everything is install, navigate back to the main directory and start the development server. This will start the client at port `localhost:3000` and the API at `localhost:8000/api/data`.
 
 ```shell
-npm run dev
+npm run start
 ```
