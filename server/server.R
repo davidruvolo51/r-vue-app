@@ -27,12 +27,14 @@ cors <- function(req, res) {
 
 # endpoint: `/api/data`
 app$handle(
-    methods = "POST",
+    methods = "GET",
     path = "/api/data",
-    handler = function(req, value = 0) {
-        val <- as.numeric(value)
-
-        list(data = jsonlite::toJSON(palmerpenguins::penguins[1:val, ]))
+    serializer = plumber::serializer_json(
+        na = "string",
+        type = "application/json"
+    ),
+    handler = function(req) {
+        list(json = palmerpenguins::penguins[1:10, ])
     }
 )
 
