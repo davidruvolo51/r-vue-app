@@ -5,9 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "Rscript -e \"source('server.R')\"",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "client": "cd client && yarn dev",
+    "server": "Rscript -e \"source('server/server.R')\"",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "devDependencies": {
     "concurrently": "^6.0.0"
