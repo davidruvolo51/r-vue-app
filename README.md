@@ -1,4 +1,4 @@
-# R Demo using Plumber, Vue, and Vite
+# R ❤️ Vue + Vite Demo application
 
 ![r plumber vue and vite application](r-vue-app.png)
 
