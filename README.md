@@ -1,5 +1,7 @@
 # R Demo using Plumber, Vue, and Vite
 
+![r plumber vue and vite application](r-vue-app.png)
+
 The `r-vue-app` demonstrates how to create an Vue application using R plumber as a backend. This demo also uses Vite.
 
 - Backend Tools
