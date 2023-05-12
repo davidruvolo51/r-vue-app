@@ -14,8 +14,6 @@
   "extensions": {
     "recommendations": [
       "davidanson.vscode-markdownlint",
-      "ikuyadeu.r",
-      "reditorsupport.r-lsp",
       "octref.vetur"
     ]
   }
