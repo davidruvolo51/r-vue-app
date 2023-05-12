@@ -9,11 +9,43 @@
   </footer>
 </template>
 
-<script setup>
-import DataTable from "./components/DataTable.vue";
+<script>
+import DataTable from "./components/DataTable.vue"
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+export default {
+  data () {
+    return {
+      data: null,
+      colnames: null,
+    }
+  },
+  components: {
+    DataTable
+  },
+  methods: {
+    async fetch (url) {
+      const response = await fetch(url)
+      if (response.status / 100 !== 2) {
+        const error = JSON.stringify({
+          message: response.statusText,
+          status: response.status,
+          url: response.url
+        })
+        throw new Error(error)
+      }
+      return response.json()
+    }
+  },
+  mounted () {
+    Promise.resolve(
+      this.fetch('http://localhost:8000/api/data')
+    ).then(response => {
+      const data = response.items
+      this.data = data
+      this.colnames = Object.keys(data[0])
+    })
+  }
+}
 </script>
 
 <style>
@@ -38,34 +70,3 @@ footer {
   text-align: center;
 }
 </style>
-
-<script>
-export default {
-  data: function () {
-    return {
-      data: null,
-      colnames: null,
-    };
-  },
-  methods: {
-    fetchData: function () {
-      fetch("http://localhost:8000/api/data", { method: "GET" })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw response;
-          }
-        })
-        .then((result) => {
-          this.colnames = Object.keys(result.json[0]);
-          this.data = result.json;
-        })
-        .catch((error) => console.error(error));
-    },
-  },
-  mounted: function () {
-    this.fetchData();
-  },
-};
-</script>
